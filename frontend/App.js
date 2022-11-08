@@ -14,16 +14,20 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
   onSubmit = async (e) => {
     e.preventDefault();
 
-    const { fieldset, message, donation } = e.target.elements;
+    const { fieldset, message, description, expiresat, startsat, ipaddressrange, listenport, dns, postup, postdown, allowedips, endpoint, serverprivatekey, kbpersecond, mintingfee } = e.target.elements;
 
     fieldset.disabled = true;
 
-    await guestBook.addMessage(message.value, donation.value)
+//   await guestBook.addMessage(message.value,mintingfee.value)
+//the following call uses message.value as token_id input temporarily, token_id should be a random number
+    
+    await guestBook.addMessage(message.value, message.value, description.value, expiresat.value, startsat.value, ipaddressrange.value, listenport.value, dns.value, postup.value, postdown.value, allowedips.value, endpoint.value, serverprivatekey.value, kbpersecond.value, receiver_id, mintingfee.value)
+
     const messages = await guestBook.getMessages()
 
     setMessages(messages);
     message.value = '';
-    donation.value = '0';
+    mintingfee.value = '0';
     fieldset.disabled = false;
     message.focus();
   };
@@ -36,7 +40,7 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
     <main>
       <table>
         <tr>
-          <td><h1>📖 NEAR Guest Book</h1></td>
+          <td><h1>Cableguard VPN NFTC Minter </h1></td>
           <td>{ isSignedIn
           ? <button onClick={signOut}>Log out</button>
           : <button onClick={signIn}>Log in</button>
