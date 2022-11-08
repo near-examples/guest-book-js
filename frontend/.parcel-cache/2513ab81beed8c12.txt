@@ -1,11 +1,18 @@
-18654
+18665
 69/home/vaceituno/cableguard-vpnnftcminter/frontend/components/Form.jsx1667909585166113995 0
 71/home/vaceituno/cableguard-vpnnftcminter/frontend/components/SignIn.jsx1667909644704303802 0
 73/home/vaceituno/cableguard-vpnnftcminter/frontend/components/Messages.jsx1667909620087398353 0
 60/home/vaceituno/cableguard-vpnnftcminter/frontend/components1667913976970573432 1
+73/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.f9a43065.css1667914412327427084 0
 79/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/ledger-icon.6fca4eda.png1667914310259503476 0
 87/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/my-near-wallet-icon.e6f99cef.png1667914310259503476 0
+72/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.3b24f9e1.js1667918299862217444 0
 73/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.24908df9.css1667914310867526942 0
+72/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.d5cc0a63.js1667918299862217444 0
+76/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.3d214d75.js.map1667918713462136069 0
+79/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/ledger-icon.a0186cc1.png1667914412343427696 0
+76/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.3b24f9e1.js.map1667918300082226068 0
+72/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.3d214d75.js1667918713434135007 0
 86/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/normalize-path/index.js1667914125552312864 0
 77/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/normalize-path1667914125684318053 1
 80/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/bs58/CHANGELOG.md1667914125856324813 0
@@ -1623,7 +1630,7 @@
 97/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@parcel/watcher/src/unix/legacy.cc1667914127164376225 0
 94/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@parcel/watcher/src/unix/fts.cc1667914126992369464 0
 108/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@parcel/watcher/src/windows/WindowsBackend.hh1667914127952407193 0
-67/home/vaceituno/cableguard-vpnnftcminter/frontend/near-interface.js1667831289083346238 0
+67/home/vaceituno/cableguard-vpnnftcminter/frontend/near-interface.js1667918001106748222 0
 90/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@parcel/watcher/binding.gyp1667914127592393045 0
 88/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@parcel/watcher/README.md1667914127992408766 0
 86/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@parcel/watcher/LICENSE1667914125456309090 0
@@ -4659,7 +4666,7 @@
 98/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/multiformats/esm/src/hashes/sha2.js1667914129152454348 0
 83/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/events/tests/once.js1667914127204377796 0
 130/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/util/UnsubscriptionError.js.map1667914131572549423 0
-65/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.html1667914310859526633 0
+65/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.html1667918299846216817 0
 116/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/util/Immediate.js1667914129940485310 0
 115/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/util/tryCatch.js1667914130548509197 0
 122/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/util/isArrayLike.js.map1667914130976526011 0
@@ -5214,6 +5221,7 @@
 128/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/internal/util/isObservable.js1667914130036489082 0
 82/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/parcel/package.json1667914126776360975 0
 106/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/esm5/internal/observable/empty.js1667914129716476508 0
+75/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/favicon.7155ca86.ico1667914412299426011 0
 121/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/esm5/internal/observable/dom/WebSocketSubject.js1667914130372502282 0
 82/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/fast-safe-stringify1667914126780361132 1
 110/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/esm5/internal/observable/empty.js.map1667914130620512025 0
@@ -9830,7 +9838,7 @@
 84/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/yargs/locales/de.json1667914127692396975 0
 102/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/runtime/helpers/inheritsLoose.js1667914129116452933 0
 74/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/timsort/src1667914126672356887 1
-56/home/vaceituno/cableguard-vpnnftcminter/frontend/App.js1667831257814207801 0
+56/home/vaceituno/cableguard-vpnnftcminter/frontend/App.js1667915384679943937 0
 81/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/css-tree/lib/lexer1667914129384463463 1
 101/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@walletconnect/window-getters/dist/umd1667914126692357673 1
 97/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/traverse/lib/context.js.map1667914126524351070 0
@@ -10049,7 +10057,7 @@
 128/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/internal/operators/groupBy.js1667914129904483895 0
 102/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/caniuse-lite/data/features/dommatrix.js1667914129776478866 0
 109/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/preset-env/lib/polyfills/regenerator.js1667914128008409394 0
-49/home/vaceituno/cableguard-vpnnftcminter/frontend1667914273606086651 1
+49/home/vaceituno/cableguard-vpnnftcminter/frontend1667915704799821390 1
 104/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/types/lib/definitions/index.js.map1667914129284459534 0
 115/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@walletconnect/heartbeat/dist/cjs/constants/index.js1667914127528390530 0
 109/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/types/lib/converters/ensureBlock.js.map1667914129020449162 0
@@ -11247,6 +11255,7 @@
 107/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@walletconnect/safe-json/dist/cjs/index.d.ts1667914127120374495 0
 106/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@near-wallet-selector/math-wallet/index.cjs1667914126520350913 0
 121/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/typescript/loc/lcl/CHT/Targets/ProjectItemsSchema.xaml.lcl1667914132252576135 0
+77/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.f9a43065.css.map1667914412335427390 0
 90/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/README.md1667914128220417725 0
 108/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/runtime/helpers/esm/wrapNativeSuper.js1667914129072451205 0
 113/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@near-wallet-selector/core/lib/services/index.d.ts1667914127644395089 0
@@ -11646,7 +11655,7 @@
 93/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/types/lib/builders/flow1667914127952407193 1
 120/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/operator/share.js.map1667914131392542353 0
 112/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/cjs/internal/operators/skipUntil.js.map1667914131056529154 0
-67/home/vaceituno/cableguard-vpnnftcminter/frontend/package-lock.json1667914133516625779 0
+67/home/vaceituno/cableguard-vpnnftcminter/frontend/package-lock.json1667918779136623835 0
 86/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/csso/lib/replace/Url.js1667914128604432815 0
 75/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/set-blocking1667914125828323713 1
 101/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/caniuse-lite/dist/unpacker/browsers.js1667914128740438159 0
@@ -12629,7 +12638,7 @@
 87/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/src/internal/umd.ts1667914131736555866 0
 147/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@walletconnect/core/node_modules/@walletconnect/types/dist/types/core/store.d.ts.map1667914127984408451 0
 104/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/types/lib/definitions/utils.js.map1667914129344461892 0
-54/home/vaceituno/cableguard-vpnnftcminter/frontend/dist1667914310971530956 1
+54/home/vaceituno/cableguard-vpnnftcminter/frontend/dist1667918713474136525 1
 123/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/operators/skipUntil.d.ts1667914132140571735 0
 81/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/error-polyfill/lib1667914126888365377 1
 90/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/error-polyfill/lib/index.js1667914126620354843 0
@@ -14556,6 +14565,7 @@
 122/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/operators/filter.js.map1667914130824520039 0
 105/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@walletconnect/safe-json/dist/cjs/index.js1667914125860324971 0
 95/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/cjs/internal/operators1667914131356540939 1
+87/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/my-near-wallet-icon.ebfed669.png1667914412343427696 0
 92/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/regenerator-transform/LICENSE1667914125408307203 0
 129/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/internal/operators/filter.d.ts1667914131820559166 0
 108/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/cjs/internal/operators/switchAll.js1667914130304499610 0
@@ -15551,6 +15561,7 @@
 94/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/function-bind/implementation.js1667914126180337549 0
 105/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/cjs/internal/util/workarounds.js1667914130396503224 0
 102/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/esm/internal/Scheduler.js.map1667914131036528368 0
+76/home/vaceituno/cableguard-vpnnftcminter/frontend/dist/index.d5cc0a63.js.map1667918300086226225 0
 144/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/_esm2015/internal/observable/fromArray.js.map1667914130880522239 0
 98/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/rxjs/dist/esm/internal/types.js.map1667914131312539210 0
 90/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/function-bind/.editorconfig1667914126552352170 0
@@ -18215,7 +18226,7 @@
 111/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@babel/core/lib/config/config-descriptors.js.map1667914127252379683 0
 123/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/operators/timeout.js.map1667914131548548481 0
 121/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/operators/takeWhile.js1667914130480506525 0
-81/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/.package-lock.json1667914133620629864 0
+81/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/.package-lock.json1667918779220627012 0
 140/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/_esm5/internal/operators/multicast.js.map1667914131040528525 0
 120/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/operators/reduce.d.ts1667914132080569379 0
 119/home/vaceituno/cableguard-vpnnftcminter/frontend/node_modules/@ledgerhq/devices/node_modules/rxjs/operators/timeout.js1667914130524508253 0

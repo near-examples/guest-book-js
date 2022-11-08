@@ -5,7 +5,6 @@ import { internalNftTokens, internalSupplyForOwner, internalTokensForOwner, inte
 import { internalNftToken, internalNftTransfer, internalNftTransferCall, internalResolveTransfer } from './nft_core';
 import { internalNftApprove, internalNftIsApproved, internalNftRevoke, internalNftRevokeAll } from './approval';
 import { internalNftPayout, internalNftTransferPayout } from './royalty';
-import { MINFEE, PostedMessage } from './model'
 
 /// This spec can be treated like a version of the standard.
 export const NFT_METADATA_SPEC = "nftc-0.2.0";

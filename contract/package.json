@@ -1,18 +1,26 @@
 {
-  "name": "contract",
+  "name": "template",
   "version": "1.0.0",
-  "license": "(MIT AND Apache-2.0)",
+  "description": "Contract template with near-sdk-js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "./build.sh",
-    "deploy": "./deploy.sh",
-    "test": "echo no unit testing"
+    "deploynft": "near dev-deploy --wasmFile build/contract.wasm",
+    "build": "npm run buildnft",
+    "buildnft": "near-sdk-js build src/nft-contract/index.ts build/contract.wasm",
+    "buildmarket": "near-sdk-js build src/market-contract/index.ts build/market.wasm",
+    "test": "ava"
   },
+  "author": "Near Inc <hello@nearprotocol.com>",
+  "license": "Apache-2.0",
   "dependencies": {
-    "near-cli": "^3.4.0",
-    "near-sdk-js": "0.5.0"
+    "near-sdk-js": "0.4.0-5",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "typescript": "^4.7.4"
+  },
+  "engines": {
+    "yarn": "YARN NO LONGER USED - use npm instead."
   }
 }

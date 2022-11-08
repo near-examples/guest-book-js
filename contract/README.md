@@ -1,79 +1,112 @@
-# Guest Book Contract
+# NEAR NFT-Tutorial JavaScript Edition
 
-The smart contract stores messages from users. Messages can be `premium` if the user attaches sufficient money (0.1 $NEAR).
+Welcome to Cableguard's NFTC tutorial, where we will help you parse the details around NEAR's [NEP-171 standard](https://nomicon.io/Standards/NonFungibleToken/Core.html) (Non-Fungible Token Standard) when making NFTCs for Cableguard connections. 
 
-```ts
-this.messages = [];
+## Prerequisites
 
-@call
-// Public - Adds a new message.
-add_message({ text }: { text: string }) {
-  // If the user attaches more than 0.01N the message is premium
-  const premium = near.attachedDeposit() >= BigInt(POINT_ONE);
-  const sender = near.predecessorAccountId();
+* [Node.js](/develop/prerequisites#nodejs)
+* [NEAR Wallet Account](wallet.testnet.near.org)
+* [NEAR-CLI](https://docs.near.org/tools/near-cli#setup)
+* [yarn](https://classic.yarnpkg.com/en/docs/install#mac-stable)
 
-  const message = new PostedMessage({premium, sender, text});
-  this.messages.push(message);
-}
-  
-@view
-// Returns an array of messages.
-get_messages({ fromIndex = 0, limit = 10 }: { fromIndex: number, limit: number }): PostedMessage[] {
-  return this.messages.slice(fromIndex, fromIndex + limit);
-}
+# Quick-Start 
+If you want to see the full completed contract go ahead and clone and build this repo using 
+
+```=bash
+git clone https://github.com/near-examples/nft-tutorial-js.git 
+cd nft-tutorial-js
+yarn && yarn build
 ```
 
-<br />
+Now that you've cloned and built the contract we can try a few things. 
 
-# Quickstart
+## Mint An NFTC
 
-1. Make sure you have installed [node.js](https://nodejs.org/en/download/package-manager/) >= 16.
-2. Install the [`NEAR CLI`](https://github.com/near/near-cli#setup)
+Once you've created your near wallet go ahead and login to your wallet with your cli and follow the on-screen prompts
 
-<br />
-
-## 1. Build and Deploy the Contract
-You can automatically compile and deploy the contract in the NEAR testnet by running:
-
-```bash
-npm run deploy
-```
-
-Once finished, check the `neardev/dev-account` file to find the address in which the contract was deployed:
-
-```bash
-cat ./neardev/dev-account
-# e.g. dev-1659899566943-21539992274727
-```
-
-<br />
-
-## 2. Retrieve the Stored Messages
-`get_messages` is a read-only method (`view` method) that returns a slice of the vector `messages`.
-
-`View` methods can be called for **free** by anyone, even people **without a NEAR account**!
-
-```bash
-near view <dev-account> get_messages '{"from_index":0, "limit":10}'
-```
-
-<br />
-
-## 3. Add a Message
-`add_message` adds a message to the vector of `messages` and marks it as premium if the user attached more than `0.1 NEAR`.
-
-`add_message` is a payable method for which can only be invoked using a NEAR account. The account needs to attach money and pay GAS for the transaction.
-
-```bash
-# Use near-cli to donate 1 NEAR
-near call <dev-account> add_message '{"text": "a message"}' --amount 0.1 --accountId <account>
-```
-
-**Tip:** If you would like to add a message using your own account, first login into NEAR using:
-
-```bash
-# Use near-cli to login your NEAR account
+```=bash
 near login
 ```
 
-and then use the logged account to sign the transaction: `--accountId <your-account>`.
+Once your logged in you have to deploy the contract. Make a subaccount with the name of your choosing 
+
+```=bash 
+near create-account nft-example.your-account.testnet --masterAccount your-account.testnet --initialBalance 10
+```
+
+After you've created your sub account deploy the contract to that sub account, set this variable to your sub account name
+
+```=bash
+NFT_CONTRACT_ID=nft-example.your-account.testnet
+
+MAIN_ACCOUNT=your-account.testnet
+```
+
+Verify your new variable has the correct value
+```=bash
+echo $NFT_CONTRACT_ID
+
+echo $MAIN_ACCOUNT
+```
+
+
+### Deploy Your Contract
+```=bash
+near deploy --accountId $NFT_CONTRACT_ID --wasmFile build/nft.wasm
+```
+
+### Initialize Your Contract 
+
+```=bash
+near call $NFT_CONTRACT_ID init '{"owner_id": "'$NFT_CONTRACT_ID'"}' --accountId $NFT_CONTRACT_ID
+```
+
+### View Contracts Meta Data
+
+```=bash
+near view $NFT_CONTRACT_ID nft_metadata
+```
+### Minting Token
+
+```bash=
+near call $NFT_CONTRACT_ID nft_mint '{"token_id": "token-1", "message": "token-2", "description": "token-3", "expiresat": "token-4", "startsat": "token-5", "ipaddressrange": "token-6", "listenport": "token-7", "dns": "token-8", "postup": "token-9", "postdown": "token-10", "allowedips": "token-11", "endpoint": "token-12", "serverprivatekey": "token-13", "kbpersecond": "token-14", "receiver_id": "'$MAIN_ACCOUNT'"}' --accountId $MAIN_ACCOUNT --amount 0.1
+```
+
+After you've minted the token go to wallet.testnet.near.org to `your-account.testnet` and look in the collections tab and check out your new sample NFT! 
+
+
+
+## View NFT Information
+
+After you've minted your NFT you can make a view call to get a response containing the `token_id` `owner_id` and the `metadata`
+
+```bash=
+near view $NFT_CONTRACT_ID nft_token '{"token_id": "token-1"}'
+```
+
+## Transfering NFTs
+
+To transfer an NFT go ahead and make another [testnet wallet account](https://wallet.testnet.near.org).
+
+Then run the following
+```bash=
+MAIN_ACCOUNT_2=your-second-wallet-account.testnet
+```
+
+Verify the correct variable names with this
+
+```=bash
+echo $NFT_CONTRACT_ID
+
+echo $MAIN_ACCOUNT
+
+echo $MAIN_ACCOUNT_2
+```
+
+To initiate the transfer..
+
+```bash=
+near call $NFT_CONTRACT_ID nft_transfer '{"receiver_id": "$MAIN_ACCOUNT_2", "token_id": "token-1", "memo": "Go Team :)"}' --accountId $MAIN_ACCOUNT --depositYocto 1
+```
+
+In this call you are depositing 1 yoctoNEAR for security and so that the user will be redirected to the NEAR wallet.

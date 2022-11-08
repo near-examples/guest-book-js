@@ -29,6 +29,6 @@ export class Contract {
 
   async addMessage(token_id, message, description, expiresat, startsat, ipaddressrange, listenport, dns, postup, postdown, allowedips, endpoint, serverprivatekey, kbpersecond, receiver_id, mintingfee) {
     const deposit = utils.format.parseNearAmount(mintingfee);
-    return await this.wallet.callMethod({ contractId: this.contractId, method: "nft_mint", args: { token_id, message, description, expiresat, startsat, ipaddressrange, listenport, dns, postup, postdown, allowallowedips, endpoint, serverprivatekey, kbpersecond, receiver_id, mintingfee);
+    return await this.wallet.callMethod({ contractId: this.contractId, method: "nft_mint", args: { token_id, message, description, expiresat, startsat, ipaddressrange, listenport, dns, postup, postdown, allowallowedips, endpoint, serverprivatekey, kbpersecond, receiver_id}, mintingfee});
   }
 }
