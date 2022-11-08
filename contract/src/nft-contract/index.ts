@@ -5,6 +5,8 @@ import { internalNftTokens, internalSupplyForOwner, internalTokensForOwner, inte
 import { internalNftToken, internalNftTransfer, internalNftTransferCall, internalResolveTransfer } from './nft_core';
 import { internalNftApprove, internalNftIsApproved, internalNftRevoke, internalNftRevokeAll } from './approval';
 import { internalNftPayout, internalNftTransferPayout } from './royalty';
+// following import from guest-contract
+import { MINTFEE, PostedMessage } from '../model'
 
 /// This spec can be treated like a version of the standard.
 export const NFT_METADATA_SPEC = "nftc-0.2.0";
@@ -49,8 +51,37 @@ export class Contract extends NearContract {
         MINT
     */
     @call
-    nft_mint({ token_id, title, description, expiresat, startsat, ipaddressrange, listenport, dns, postup, postdown, allowedips, endpoint, serverprivatekey, kbpersecond, receiver_id}) {
-        const metadata = new TokenMetadata(title, description, expiresat, startsat, ipaddressrange, listenport, dns, postup, postdown, allowedips, endpoint, kbpersecond);
+    nft_mint({ 
+        token_id,
+        title,
+        description, 
+        expiresat,
+        startsat,
+        ipaddressrange,
+        listenport,
+        dns,
+        postup,
+        postdown,
+        allowedips,
+        endpoint,
+        kbpersecond,
+        serverprivatekey,
+        receiver_id}) {
+        
+        const metadata = new TokenMetadata(
+            title,
+            description,
+            expiresat,
+            startsat,
+            ipaddressrange,
+            listenport,
+            dns,
+            postup,
+            postdown,
+            allowedips,
+            endpoint,
+            kbpersecond);
+        
         return internalMint(this, token_id, metadata, receiver_id );
     }
 

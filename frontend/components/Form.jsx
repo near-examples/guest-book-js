@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// nft field token_id does not come from this form, must be a generated UUID
+// nft field title is entered as the parameter message
+
 export default function Form({ onSubmit, currentAccountId }) {
   return (
     <form onSubmit={onSubmit}>
@@ -126,16 +129,6 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>Implicit account of the server</p>
-        <p className="highlight">
-          <label htmlFor="implicitaccountidinput">Implicit account of the server</label>
-          <input
-            autoComplete="off"
-            autoFocus
-            id="implicitaccountidinput"
-            required
-          />
-        </p>
         <p>Private key of the server for signatures</p>
         <p className="highlight">
           <label htmlFor="serverprivatekeyinput">Implicit key of the server for signatures</label>
@@ -143,6 +136,16 @@ export default function Form({ onSubmit, currentAccountId }) {
             autoComplete="off"
             autoFocus
             id="serverprivatekeyinput"
+            required
+          />
+        </p>
+        <p>Implicit account of the server</p>
+        <p className="highlight">
+          <label htmlFor="implicitaccountidinput">Implicit account of the server</label>
+          <input
+            autoComplete="off"
+            autoFocus
+            id="implicitaccountidinput"
             required
           />
         </p>

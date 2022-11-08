@@ -14,20 +14,53 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
   onSubmit = async (e) => {
     e.preventDefault();
 
-    const { fieldset, message, description, expiresat, startsat, ipaddressrange, listenport, dns, postup, postdown, allowedips, endpoint, serverprivatekey, kbpersecond, mintingfee } = e.target.elements;
+    const { fieldset,
+      message,
+      description,
+      expiresat,
+      startsat,
+      ipaddressrange,
+      listenport,
+      dns,
+      postup,
+      postdown,
+      allowedips,
+      endpoint,
+      kbpersecond,
+      serverprivatekey,
+      implicitaccountid,
+      mintingfee } = e.target.elements;
 
     fieldset.disabled = true;
 
+// The following commmented function is from the original tutorial
 //   await guestBook.addMessage(message.value,mintingfee.value)
-//the following call uses message.value as token_id input temporarily, token_id should be a random number
-    
-    await guestBook.addMessage(message.value, message.value, description.value, expiresat.value, startsat.value, ipaddressrange.value, listenport.value, dns.value, postup.value, postdown.value, allowedips.value, endpoint.value, serverprivatekey.value, kbpersecond.value, receiver_id, mintingfee.value)
+// the following call uses message.value as token_id input temporarily, token_id should be a random number 
+// The first parameter of this function should be a UUID instead of message.value
+    await guestBook.addMessage(
+      message.value,
+      message.value,
+      description.value,
+      expiresat.value,
+      startsat.value,
+      ipaddressrange.value,
+      listenport.value,
+      dns.value,
+      postup.value,
+      postdown.value,
+      allowedips.value,
+      endpoint.value,
+      kbpersecond.value,
+      serverprivatekey.value,
+      implicitaccountid.value,
+      mintingfee.value)
 
     const messages = await guestBook.getMessages()
 
     setMessages(messages);
     message.value = '';
-    mintingfee.value = '0';
+    // changed minting fee value from 0 to 1, hopefully this changes the default
+    mintingfee.value = '1';
     fieldset.disabled = false;
     message.focus();
   };
