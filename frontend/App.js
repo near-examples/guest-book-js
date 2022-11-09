@@ -16,7 +16,9 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
   onSubmit = async (e) => {
     e.preventDefault();
 
+    // The message variable below should probably be changed to title for alignment with metadata.js
     const { fieldset,
+      numberofclients,
       message,
       description,
       expiresat,
@@ -43,6 +45,7 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
     let token_id = uuidv4();
 
     await guestBook.addMessage(
+      numberofclients.value,
       token_id,
       message.value,
       description.value,
@@ -64,8 +67,7 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
 
     setMessages(messages);
     message.value = '';
-    // changed minting fee value from 0 to 1, hopefully this changes the default
-    mintingfee.value = '1';
+    mintingfee.value = '0';
     fieldset.disabled = false;
     message.focus();
   };

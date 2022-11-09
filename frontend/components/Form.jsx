@@ -1,14 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// nft field token_id does not come from this form, must be a generated UUID
-// nft field title is entered as the parameter message
-
+// nft_mint field token_id is a generated UUID
+// nft_mint field title is entered as the parameter message for the time being
 export default function Form({ onSubmit, currentAccountId }) {
   return (
     <form onSubmit={onSubmit}>
       <fieldset id="fieldset">
         <p>Please enter Cableguard configuration parameters and double check for typos, { currentAccountId }!</p>
+        <p>Number of clients</p>
+        <p className="highlight">
+          <label htmlFor="numberofclients">Number of clients</label>
+          <input
+            autoComplete="off"
+            autoFocus
+            id="numberofclients"
+            required
+          />
+        </p>
         <p>VPN Provider</p>
         <p className="highlight">
           <label htmlFor="message">VPN Provider</label>

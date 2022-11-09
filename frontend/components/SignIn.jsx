@@ -4,7 +4,7 @@ export default function SignIn() {
   return (
     <>
       <p>
-          You need to sign in to mint Cableguard NFTC. When you add the minting fee
+          You need to sign in to mint Cableguard VPN NFTC. When you add the minting fee
           NEAR will double-check that you’re ok with paying for the minting.
       </p>
       </>

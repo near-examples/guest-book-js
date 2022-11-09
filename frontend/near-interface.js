@@ -29,6 +29,7 @@ export class Contract {
 //  }
 
   async addMessage(
+    numberofclients,
     token_id,
     message,
     description,
@@ -48,6 +49,8 @@ export class Contract {
     
       const deposit = utils.format.parseNearAmount(mintingfee);
     
+    // numberofclients has to be used to mint an nftc for the server and one for each client
+
     // message is in the field title, implicitaccountid should be initialized and is where the nft is sent
     return await this.wallet.callMethod({ contractId: this.contractId, method: "nft_mint", args: {
       token_id,
