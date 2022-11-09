@@ -10,7 +10,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         <p>Please enter Cableguard configuration parameters and double check for typos, { currentAccountId }!</p>
         <p>Number of clients</p>
         <p className="highlight">
-          <label htmlFor="numberofclients">Number of clients</label>
+          <label htmlFor="numberofclients">Number</label>
           <input
             autoComplete="off"
             autoFocus
@@ -20,7 +20,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>VPN Provider</p>
         <p className="highlight">
-          <label htmlFor="message">VPN Provider</label>
+          <label htmlFor="message">Name of the Provider</label>
           <input
             autoComplete="off"
             autoFocus
@@ -30,7 +30,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>VPN Service Description</p>
         <p className="highlight">
-          <label htmlFor="descriptioninput">Brief description of the service</label>
+          <label htmlFor="descriptioninput">Brief description</label>
           <input
             autoComplete="off"
             autoFocus
@@ -90,7 +90,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Post Up command for the VPN server</p>
         <p className="highlight">
-          <label htmlFor="postupinput">iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</label>
+          <label htmlFor="postupinput">e.g. iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</label>
           <input
             autoComplete="off"
             autoFocus
@@ -100,7 +100,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Post Down command for the VPN server</p>
         <p className="highlight">
-          <label htmlFor="postdowninput">iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE</label>
+          <label htmlFor="postdowninput">e.g. iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE</label>
           <input
             autoComplete="off"
             autoFocus
@@ -118,9 +118,9 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>IP address of the VPN server where the clients connect</p>
+        <p>IPv4 address of the VPN server where the clients connect</p>
         <p className="highlight">
-          <label htmlFor="endpointinput">IP address of the VPN server where the clients connect</label>
+          <label htmlFor="endpointinput">IPv4 address</label>
           <input
             autoComplete="off"
             autoFocus
@@ -148,9 +148,9 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>Implicit account of the server</p>
+        <p>Implicit account of the server in HEX</p>
         <p className="highlight">
-          <label htmlFor="implicitaccountidinput">Implicit account in HEX</label>
+          <label htmlFor="implicitaccountidinput">You MUST pre-initialize the Implicit account with some NEAR before</label>
           <input
             autoComplete="off"
             autoFocus
@@ -159,13 +159,13 @@ export default function Form({ onSubmit, currentAccountId }) {
           />
         </p>
         <p>
-          <label htmlFor="mintingfee">Minting Fee</label>
+          <label htmlFor="mintingfee">NFTC Minting Fee per each client, plus 1 for server</label>
           <input
             autoComplete="off"
-            defaultValue={'0'}
+            defaultValue={'1'}
             id="mintingfee"
-            min="0"
-            step="0.01"
+            min="0.5"
+            step="0.1"
             type="number"
           />
           <span title="NEAR Tokens">Ⓝ</span>
