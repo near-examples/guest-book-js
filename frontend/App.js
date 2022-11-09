@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Form from './components/Form';
 import SignIn from './components/SignIn';
 import Messages from './components/Messages';
+// Import UUID library
+import {v4 as uuidv4} from 'uuid';
 
 const App = ({ isSignedIn, guestBook, wallet }) => {
   const [messages, setMessages] = useState([]);
@@ -35,10 +37,13 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
 
 // The following commmented function is from the original tutorial
 //   await guestBook.addMessage(message.value,mintingfee.value)
-// the following call uses message.value as token_id input temporarily, token_id should be a random number 
-// The first parameter of this function should be a UUID instead of message.value
+// The following call can uses message.value as token_id input if UUID does not work for some reason,
+// token_id should be a random identifier
+// The first parameter of this function should is a random UUID
+    let token_id = uuidv4();
+
     await guestBook.addMessage(
-      message.value,
+      token_id,
       message.value,
       description.value,
       expiresat.value,

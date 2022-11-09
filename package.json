@@ -16,5 +16,7 @@
   "devDependencies": {
     "near-cli": "^3.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
 }
