@@ -19,7 +19,7 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
     // The message variable below should probably be changed to title for alignment with metadata.js
     const { fieldset,
       numberofclients,
-      message,
+      title,
       description,
       expiresat,
       startsat,
@@ -47,7 +47,7 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
     await guestBook.addMessage(
       numberofclients.value,
       token_id,
-      message.value,
+      title.value,
       description.value,
       expiresat.value,
       startsat.value,
@@ -66,10 +66,10 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
     const messages = await guestBook.getMessages()
 
     setMessages(messages);
-    message.value = '';
+    title.value = '';
     mintingfee.value = '0';
     fieldset.disabled = false;
-    message.focus();
+    title.focus();
   };
 
   const signIn = () => { wallet.signIn() }

@@ -5,10 +5,10 @@ export default function Messages({ messages }) {
   return (
     <>
       <h2>Messages</h2>
-      {messages.map((message, i) =>
-        <p key={i} className={message.premium ? 'is-premium' : ''}>
-          <strong>{message.sender}</strong>:<br/>
-          {message.text}
+      {messages.map((title, i) =>
+        <p key={i} className={title.premium ? 'is-premium' : ''}>
+          <strong>{title.sender}</strong>:<br/>
+          {title.text}
         </p>
       )}
     </>

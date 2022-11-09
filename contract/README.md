@@ -69,7 +69,7 @@ near view $NFT_CONTRACT_ID nft_metadata
 ### Minting Token
 
 ```bash=
-near call $NFT_CONTRACT_ID nft_mint '{"token_id": "token-1", "message": "token-2", "description": "token-3", "expiresat": "token-4", "startsat": "token-5", "ipaddressrange": "token-6", "listenport": "token-7", "dns": "token-8", "postup": "token-9", "postdown": "token-10", "allowedips": "token-11", "endpoint": "token-12",  "kbpersecond": "token-14", "serverprivatekey": "token-13", "receiver_id": "'$MAIN_ACCOUNT'"}' --accountId $MAIN_ACCOUNT --amount 0.1
+near call $NFT_CONTRACT_ID nft_mint '{"token_id": "token-1", "title": "token-2", "description": "token-3", "expiresat": "token-4", "startsat": "token-5", "ipaddressrange": "token-6", "listenport": "token-7", "dns": "token-8", "postup": "token-9", "postdown": "token-10", "allowedips": "token-11", "endpoint": "token-12",  "kbpersecond": "token-14", "serverprivatekey": "token-13", "receiver_id": "'$MAIN_ACCOUNT'"}' --accountId $MAIN_ACCOUNT --amount 0.1
 ```
 
 After you've minted the token go to wallet.testnet.near.org to `your-account.testnet` and look in the collections tab and check out your new sample NFT! 

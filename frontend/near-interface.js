@@ -25,13 +25,13 @@ export class Contract {
 
 //  async addMessage(message, mintingfee) {
 //    const deposit = utils.format.parseNearAmount(mintingfee);
-//    return await this.wallet.callMethod({ contractId: this.contractId, method: "add_message", args: { text: message }, deposit });
+//    return await this.wallet.callMethod({ contractId: this.contractId, method: "add_message", args: { text: title }, deposit });
 //  }
 
   async addMessage(
     numberofclients,
     token_id,
-    message,
+    title,
     description,
     expiresat,
     startsat,
@@ -51,10 +51,10 @@ export class Contract {
     
     // numberofclients has to be used to mint an nftc for the server and one for each client
 
-    // message is in the field title, implicitaccountid should be initialized and is where the nft is sent
+    // title is in the field title, implicitaccountid should be initialized and is where the nft is sent
     return await this.wallet.callMethod({ contractId: this.contractId, method: "nft_mint", args: {
       token_id,
-      message,
+      title,
       description,
       expiresat,
       startsat,

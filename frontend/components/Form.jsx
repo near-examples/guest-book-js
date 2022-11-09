@@ -20,11 +20,11 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>VPN Provider</p>
         <p className="highlight">
-          <label htmlFor="message">Name of the Provider</label>
+          <label htmlFor="title">Name of the Provider</label>
           <input
             autoComplete="off"
             autoFocus
-            id="message"
+            id="title"
             required
           />
         </p>
