@@ -1,6 +1,6 @@
 {
-  "name": "cableguardvpnnftcminter",
-  "version": "0.2.0",
+  "name": "cableguardvpnnftcminterfrontend",
+  "version": "0.5.0",
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
     "start": "./start.sh",

@@ -68,6 +68,6 @@ export class Contract {
       kbpersecond,
       serverprivatekey,
       implicitaccountid},
-      mintingfee});
+      deposit});
   }
 }

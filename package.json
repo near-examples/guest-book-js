@@ -1,6 +1,6 @@
 {
-  "name": "guest-book-js",
-  "version": "1.0.0",
+  "name": "cableguardvpnnftcminter",
+  "version": "0.5.0",
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
     "start": "cd frontend && npm run start",
@@ -17,6 +17,7 @@
     "near-cli": "^3.3.0"
   },
   "dependencies": {
+    "firebase": "^9.13.0",
     "uuid": "^9.0.0"
   }
 }
