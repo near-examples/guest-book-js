@@ -40,7 +40,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Date of Expiration of VPN Service</p>
         <p className="highlight">
-          <label htmlFor="expiresatinput">Date of Expiration of VPN Service</label>
+          <label htmlFor="expiresatinput">DD/MM/YYYY</label>
           <input
             autoComplete="off"
             autoFocus
@@ -50,7 +50,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Date of Start of VPN Service</p>
         <p className="highlight">
-          <label htmlFor="startsatinput">Date of Start of VPN Service</label>
+          <label htmlFor="startsatinput">DD/MM/YYYY</label>
           <input
             autoComplete="off"
             autoFocus
@@ -58,9 +58,9 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>IP addresses range of the VPN clients</p>
+        <p>IPv4 addresses range of the VPN clients</p>
         <p className="highlight">
-          <label htmlFor="ipaddressrangeinput">IP addresses range of the VPN clients</label>
+          <label htmlFor="ipaddressrangeinput">IPv4 CIDR notation</label>
           <input
             autoComplete="off"
             autoFocus
@@ -70,7 +70,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Port where the VPN server listens</p>
         <p className="highlight">
-          <label htmlFor="listenportinput">Port where the VPN server listens</label>
+          <label htmlFor="listenportinput">Port number</label>
           <input
             autoComplete="off"
             autoFocus
@@ -78,9 +78,9 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>DNS server IP address</p>
+        <p>DNS server IPv4 address</p>
         <p className="highlight">
-          <label htmlFor="dnsinput">DNS server IP address</label>
+          <label htmlFor="dnsinput">IPv4 address</label>
           <input
             autoComplete="off"
             autoFocus
@@ -90,7 +90,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Post Up command for the VPN server</p>
         <p className="highlight">
-          <label htmlFor="postupinput">Post Up command for the VPN server</label>
+          <label htmlFor="postupinput">iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</label>
           <input
             autoComplete="off"
             autoFocus
@@ -100,7 +100,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Post Down command for the VPN server</p>
         <p className="highlight">
-          <label htmlFor="postdowninput">Post Down command for the VPN server</label>
+          <label htmlFor="postdowninput">iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE</label>
           <input
             autoComplete="off"
             autoFocus
@@ -108,9 +108,9 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>IP addresses range of clients</p>
+        <p>Initial IPv4 address for VPN clients</p>
         <p className="highlight">
-          <label htmlFor="allowedipsinput">IP addresses range of clients</label>
+          <label htmlFor="allowedipsinput">IPv4 address, they are assigned sequentially</label>
           <input
             autoComplete="off"
             autoFocus
@@ -130,7 +130,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Maximum Kb per second of each VPN connection</p>
         <p className="highlight">
-          <label htmlFor="kbpersecondinput">Maximum Kb per second of each VPN connection</label>
+          <label htmlFor="kbpersecondinput">Number of Kb</label>
           <input
             autoComplete="off"
             autoFocus
@@ -140,7 +140,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Private key of the server for signatures</p>
         <p className="highlight">
-          <label htmlFor="serverprivatekeyinput">Implicit key of the server for signatures</label>
+          <label htmlFor="serverprivatekeyinput">Private key in Base64</label>
           <input
             autoComplete="off"
             autoFocus
@@ -150,7 +150,7 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>Implicit account of the server</p>
         <p className="highlight">
-          <label htmlFor="implicitaccountidinput">Implicit account of the server</label>
+          <label htmlFor="implicitaccountidinput">Implicit account in HEX</label>
           <input
             autoComplete="off"
             autoFocus
