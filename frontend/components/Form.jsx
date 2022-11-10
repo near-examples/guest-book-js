@@ -10,11 +10,11 @@ export default function Form({ onSubmit, currentAccountId }) {
         <p>Please enter Cableguard configuration parameters and double check for typos, { currentAccountId }!</p>
         <p>Number of clients</p>
         <p className="highlight">
-          <label htmlFor="numberofclients">Number</label>
+          <label htmlFor="numberofclientsinput">Number</label>
           <input
             autoComplete="off"
             autoFocus
-            id="numberofclients"
+            id="numberofclientsinput"
             required
           />
         </p>

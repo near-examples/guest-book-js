@@ -16,7 +16,6 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
   onSubmit = async (e) => {
     e.preventDefault();
 
-    // The message variable below should probably be changed to title for alignment with metadata.js
     const { fieldset,
       numberofclients,
       title,
@@ -44,9 +43,10 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
 // The first parameter of this function should is a random UUID
     let token_id = uuidv4();
 
+    // removed token_id from parameters to see if the bug goes away
     await guestBook.addMessage(
       numberofclients.value,
-      token_id,
+      title.value,
       title.value,
       description.value,
       expiresat.value,
@@ -61,7 +61,7 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
       kbpersecond.value,
       serverprivatekey.value,
       implicitaccountid.value,
-      mintingfee.value)
+      mintingfee.value);
 
     const messages = await guestBook.getMessages()
 

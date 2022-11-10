@@ -1,5 +1,5 @@
-/* Talking with a contract often involves transforming data, 
-we recommend you to encapsulate that logic into a class */
+// Talking with a contract often involves transforming data, 
+// we recommend you to encapsulate that logic into a class
 
 import { utils } from 'near-api-js';
 
@@ -9,12 +9,6 @@ export class Contract {
     this.contractId = contractId;
     this.wallet = walletToUse
   }
-  
-//  async getMessages() {
-//    const messages = await this.wallet.viewMethod({ contractId: this.contractId, method: "get_messages" })
-//    console.log(messages)
-//    return messages
-//  }
 
 // using method nft_tokens as it seems to have the most compatible variables with get_messages
   async getMessages() {
@@ -22,11 +16,6 @@ export class Contract {
     console.log(messages)
     return messages
   }
-
-//  async addMessage(message, mintingfee) {
-//    const deposit = utils.format.parseNearAmount(mintingfee);
-//    return await this.wallet.callMethod({ contractId: this.contractId, method: "add_message", args: { text: title }, deposit });
-//  }
 
   async addMessage(
     numberofclients,
@@ -50,24 +39,25 @@ export class Contract {
       const deposit = utils.format.parseNearAmount(mintingfee);
     
     // numberofclients has to be used to mint an nftc for the server and one for each client
-
-    // title is in the field title, implicitaccountid should be initialized and is where the nft is sent
-    return await this.wallet.callMethod({ contractId: this.contractId, method: "nft_mint", args: {
-      token_id,
-      title,
-      description,
-      expiresat,
-      startsat,
-      ipaddressrange,
-      listenport,
-      dns,
-      postup,
-      postdown,
-      allowedips,
-      endpoint,
-      kbpersecond,
-      serverprivatekey,
-      implicitaccountid},
+    // implicitaccountid should be initialized and is where the nft is sent
+    return await this.wallet.callMethod({ contractId: this.contractId,
+      method: "nft_mint",
+      args: {
+      token_idinput: token_id,
+      titleinput: title,
+      descriptioninput: description,
+      expiresatinput: expiresat,
+      startsatinput: startsat,
+      ipaddressrangeinput: ipaddressrange,
+      listenportinput: listenport,
+      dnsinput: dns,
+      postupinput: postup,
+      postdowninput: postdown,
+      allowedipsinput: allowedips,
+      endpointinput: endpoint,
+      kbpersecondinput: kbpersecond,
+      serverprivatekeyinput: serverprivatekey,
+      implicitaccountidinput: implicitaccountid},
       deposit});
   }
 }

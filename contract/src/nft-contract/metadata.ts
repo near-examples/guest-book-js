@@ -44,16 +44,16 @@ export class NFTContractMetadata {
 //        this.reference_hash = referenceHash // Base64-encoded sha256 hash of JSON from reference field. Required if `reference` is included.
     }
 }
-
+  
 export class TokenMetadata {
-    title?:  string; // Provider of the VPN Service
-    description?:  string; // Description of the VPN Service
+    title:  string; // Provider of the VPN Service
+    description:  string; // Description of the VPN Service
 //    media?: string;
 //    media_hash?: string;
 //    copies?: number;
 //    issued_at?: string;
-    expiresat?: string; // When the VPN Service expires, Unix epoch in milliseconds, 1 year by default in the user interface
-    startsat?: string; // When the VPN Service starts, Unix epoch in milliseconds
+    expiresat: string; // When the VPN Service expires, Unix epoch in milliseconds, 1 year by default in the user interface
+    startsat: string; // When the VPN Service starts, Unix epoch in milliseconds
 //    updated_at: string; // When token was last updated, Unix epoch in milliseconds
 //    extra:  string; // anything extra the NFT wants to store on-chain. Can be stringified JSON.
 //    reference:  string; // URL to an off-chain JSON file with more info.
@@ -81,42 +81,42 @@ export class TokenMetadata {
 //    authorizedlocation:  string; // From what region the subscription is valid, future feature not for the POC
 //    authorizednetwork: Option<Ipv4Addr>, // From what network range the subscription is valid, future feature not for the POC
 
-    constructor(
-            titleinput?:string,
-            descriptioninput?:string,
-            expiresatinput?:string,
-            startsatinput?:string,
-            ipaddressrangeinput?:string,
-            listenportinput?:string,
-            dnsinput?:string,
-            postupinput?:string,
-            postdowninput?:string,
-            allowedipsinput?:string,
-            endpointinput?:string,
-            kbpersecondinput?:string
-        ) {
-        this.title = titleinput,
-        this.description = descriptioninput,
+    constructor({
+            title,
+            description,
+            expiresat,
+            startsat,
+            ipaddressrange,
+            listenport,
+            dns,
+            postup,
+            postdown,
+            allowedips,
+            endpoint,
+            kbpersecond
+        }) {
+        this.title = title,
+        this.description = description,
 //            media, 
 //            mediaHash, 
 //            copies, 
 //            issuedAt, 
-        this.expiresat = expiresatinput, 
-        this.startsat = startsatinput, 
+        this.expiresat = expiresat, 
+        this.startsat = startsat, 
 //            updatedAt, 
 //            extra, 
 //            reference, 
 //            referenceHash,
-        this.ipaddressrange = ipaddressrangeinput, // (Addr not Net because Borsh does not have a matching trait) IP Adress range, suggested random in the user interface
-        this.listenport = listenportinput, // Port number, suggested random in the user interface
-        this.dns = dnsinput, // DNS IP Adress, empty by default in the user interface
-        this.postup = postupinput,  // Post Up command for the server, with a default in the user interface
-        this.postdown = postdowninput, // Post Down command for the server, with a default in the user interface
-        this.allowedips= allowedipsinput, // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
-        this.endpoint = endpointinput, // IPAddress and port where the clients connect
+        this.ipaddressrange = ipaddressrange, // (Addr not Net because Borsh does not have a matching trait) IP Adress range, suggested random in the user interface
+        this.listenport = listenport, // Port number, suggested random in the user interface
+        this.dns = dns, // DNS IP Adress, empty by default in the user interface
+        this.postup = postup,  // Post Up command for the server, with a default in the user interface
+        this.postdown = postdown, // Post Down command for the server, with a default in the user interface
+        this.allowedips = allowedips, // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
+        this.endpoint = endpoint, // IPAddress and port where the clients connect
         this.authornftcontractid, // Non fungible token ID of the "author" of the set of Non fungible tokens created
         this.authorsignature,  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
-        this.kbpersecond = kbpersecondinput // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
+        this.kbpersecond = kbpersecond // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
     }
 }
 
