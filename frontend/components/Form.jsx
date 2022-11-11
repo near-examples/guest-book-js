@@ -10,11 +10,11 @@ export default function Form({ onSubmit, currentAccountId }) {
         <p>Please enter Cableguard configuration parameters and double check for typos, { currentAccountId }!</p>
         <p>Number of clients</p>
         <p className="highlight">
-          <label htmlFor="numberofclientsinput">Number</label>
+          <label htmlFor="numberofclients">Number</label>
           <input
             autoComplete="off"
             autoFocus
-            id="numberofclientsinput"
+            id="numberofclients"
             required
           />
         </p>
@@ -30,131 +30,131 @@ export default function Form({ onSubmit, currentAccountId }) {
         </p>
         <p>VPN Service Description</p>
         <p className="highlight">
-          <label htmlFor="descriptioninput">Brief description</label>
+          <label htmlFor="description">Brief description</label>
           <input
             autoComplete="off"
             autoFocus
-            id="descriptioninput"
+            id="description"
             required
           />
         </p>
         <p>Date of Expiration of VPN Service</p>
         <p className="highlight">
-          <label htmlFor="expiresatinput">DD/MM/YYYY</label>
+          <label htmlFor="expiresat">DD/MM/YYYY</label>
           <input
             autoComplete="off"
             autoFocus
-            id="expiresatinput"
+            id="expiresat"
             required
           />
         </p>
         <p>Date of Start of VPN Service</p>
         <p className="highlight">
-          <label htmlFor="startsatinput">DD/MM/YYYY</label>
+          <label htmlFor="startsat">DD/MM/YYYY</label>
           <input
             autoComplete="off"
             autoFocus
-            id="startsatinput"
+            id="startsat"
             required
           />
         </p>
         <p>IPv4 addresses range of the VPN clients</p>
         <p className="highlight">
-          <label htmlFor="ipaddressrangeinput">IPv4 CIDR notation</label>
+          <label htmlFor="ipaddressrange">IPv4 CIDR notation</label>
           <input
             autoComplete="off"
             autoFocus
-            id="ipaddressrangeinput"
+            id="ipaddressrange"
             required
           />
         </p>
         <p>Port where the VPN server listens</p>
         <p className="highlight">
-          <label htmlFor="listenportinput">Port number</label>
+          <label htmlFor="listenport">Port number</label>
           <input
             autoComplete="off"
             autoFocus
-            id="listenportinput"
+            id="listenport"
             required
           />
         </p>
         <p>DNS server IPv4 address</p>
         <p className="highlight">
-          <label htmlFor="dnsinput">IPv4 address</label>
+          <label htmlFor="dns">IPv4 address</label>
           <input
             autoComplete="off"
             autoFocus
-            id="dnsinput"
+            id="dns"
             required
           />
         </p>
         <p>Post Up command for the VPN server</p>
         <p className="highlight">
-          <label htmlFor="postupinput">e.g. iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</label>
+          <label htmlFor="postup">e.g. iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</label>
           <input
             autoComplete="off"
             autoFocus
-            id="postupinput"
+            id="postup"
             required
           />
         </p>
         <p>Post Down command for the VPN server</p>
         <p className="highlight">
-          <label htmlFor="postdowninput">e.g. iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE</label>
+          <label htmlFor="postdown">e.g. iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE</label>
           <input
             autoComplete="off"
             autoFocus
-            id="postdowninput"
+            id="postdown"
             required
           />
         </p>
         <p>Initial IPv4 address for VPN clients</p>
         <p className="highlight">
-          <label htmlFor="allowedipsinput">IPv4 address, they are assigned sequentially</label>
+          <label htmlFor="allowedips">IPv4 address, they are assigned sequentially</label>
           <input
             autoComplete="off"
             autoFocus
-            id="allowedipsinput"
+            id="allowedips"
             required
           />
         </p>
         <p>IPv4 address of the VPN server where the clients connect</p>
         <p className="highlight">
-          <label htmlFor="endpointinput">IPv4 address</label>
+          <label htmlFor="endpoint">IPv4 address</label>
           <input
             autoComplete="off"
             autoFocus
-            id="endpointinput"
+            id="endpoint"
             required
           />
         </p>
         <p>Maximum Kb per second of each VPN connection</p>
         <p className="highlight">
-          <label htmlFor="kbpersecondinput">Number of Kb</label>
+          <label htmlFor="kbpersecond">Number of Kb</label>
           <input
             autoComplete="off"
             autoFocus
-            id="kbpersecondinput"
+            id="kbpersecond"
             required
           />
         </p>
         <p>Private key of the server for signatures</p>
         <p className="highlight">
-          <label htmlFor="serverprivatekeyinput">Private key in Base64</label>
+          <label htmlFor="serverprivatekey">Private key in Base64</label>
           <input
             autoComplete="off"
             autoFocus
-            id="serverprivatekeyinput"
+            id="serverprivatekey"
             required
           />
         </p>
         <p>Implicit account of the server in HEX</p>
         <p className="highlight">
-          <label htmlFor="implicitaccountidinput">You MUST pre-initialize the Implicit account with some NEAR before</label>
+          <label htmlFor="implicitaccountid">You MUST pre-initialize the Implicit account with some NEAR before</label>
           <input
             autoComplete="off"
             autoFocus
-            id="implicitaccountidinput"
+            id="implicitaccountid"
             required
           />
         </p>

@@ -50,40 +50,40 @@ export class Contract extends NearContract {
     /*
         MINT
     */
-   // calling method syntax in guestbookjs add_message({ text }: { text: string }) {
+    
     @call
     nft_mint({ 
-        token_id,
-        title,
-        description, 
-        expiresat,
-        startsat,
-        ipaddressrange,
-        listenport,
-        dns,
-        postup,
-        postdown,
-        allowedips,
-        endpoint,
-        kbpersecond,
-        serverprivatekey,
-        receiver_id}) {
+        itoken_id,
+        ititle,
+        idescription, 
+        iexpiresat,
+        istartsat,
+        iipaddressrange,
+        ilistenport,
+        idns,
+        ipostup,
+        ipostdown,
+        iallowedips,
+        iendpoint,
+        ikbpersecond,
+        iserverprivatekey,
+        iimplicitaccountid}) {
+
+        const metadata = new TokenMetadata(
+            ititle,
+            idescription,
+            iexpiresat,
+            istartsat,
+            iipaddressrange,
+            ilistenport,
+            idns,
+            ipostup,
+            ipostdown,
+            iallowedips,
+            iendpoint,
+            ikbpersecond);
         
-        const metadata = new TokenMetadata({
-            title,
-            description,
-            expiresat,
-            startsat,
-            ipaddressrange,
-            listenport,
-            dns,
-            postup,
-            postdown,
-            allowedips,
-            endpoint,
-            kbpersecond});
-        
-        return internalMint(this, token_id, metadata, receiver_id );
+        return internalMint(this, itoken_id, metadata, iimplicitaccountid );
     }
 
     /*

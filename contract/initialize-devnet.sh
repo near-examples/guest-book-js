@@ -30,7 +30,7 @@ near call $NFT_CONTRACT_ID init '{"owner_id": "'$NFT_CONTRACT_ID'"}' --accountId
 near view $NFT_CONTRACT_ID nft_metadata
 
 #mint test nft
-near call $NFT_CONTRACT_ID nft_mint '{"token_id": "tokenID" , "title": "token-2", "description": "token-3", "expiresat": "token-4", "startsat": "token-5", "ipaddressrange": "token-6", "listenport": "token-7", "dns": "token-8", "postup": "token-9", "postdown": "token-10", "allowedips": "token-11", "endpoint": "token-12", "kbpersecond": "token-14", "serverprivatekey": "token-13","receiver_id": "'$MAIN_ACCOUNT'"}' --accountId $MAIN_ACCOUNT --amount 0.1
+near call $NFTCONTRACTID nft_mint '{"itoken_id": "tokenID" , "ititle": "token-2", "idescription": "token-3", "iexpiresat": "token-4", "istartsat": "token-5", "iipaddressrange": "token-6", "ilistenport": "token-7", "idns": "token-8", "ipostup": "token-9", "ipostdown": "token-10", "iallowedips": "itoken-11", "endpoint": "itoken-12", "ikbpersecond": "token-14", "iserverprivatekey": "token-13","ireceiver_id": "'$NFTCONTRACTID'"}' --accountId $NFTCONTRACTID --amount 0.1
 
 #view nft
 near view $NFT_CONTRACT_ID nft_token '{"token_id": "tokenID"}'

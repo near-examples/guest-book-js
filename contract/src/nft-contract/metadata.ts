@@ -46,14 +46,14 @@ export class NFTContractMetadata {
 }
   
 export class TokenMetadata {
-    title:  string; // Provider of the VPN Service
-    description:  string; // Description of the VPN Service
+    title?:  string; // Provider of the VPN Service
+    description?:  string; // Description of the VPN Service
 //    media?: string;
 //    media_hash?: string;
 //    copies?: number;
 //    issued_at?: string;
-    expiresat: string; // When the VPN Service expires, Unix epoch in milliseconds, 1 year by default in the user interface
-    startsat: string; // When the VPN Service starts, Unix epoch in milliseconds
+    expiresat?: string; // When the VPN Service expires, Unix epoch in milliseconds, 1 year by default in the user interface
+    startsat?: string; // When the VPN Service starts, Unix epoch in milliseconds
 //    updated_at: string; // When token was last updated, Unix epoch in milliseconds
 //    extra:  string; // anything extra the NFT wants to store on-chain. Can be stringified JSON.
 //    reference:  string; // URL to an off-chain JSON file with more info.
@@ -62,61 +62,61 @@ export class TokenMetadata {
 // Following parameters belong to the wireguard config file section [Interface]
 //    vpnaccelerator: Option<Bool>, // VPN Accelerator is on if true, off if false, future feature not for the POC
 //    privatekey:  string; //  This is sourced from the Wallet
-    ipaddressrange: string; // (Addr not Net because Borsh does not have a matching trait) IP Adress range, suggested random in the user interface
-    listenport: string; // Port number, suggested random in the user interface
-    dns: string; // DNS IP Adress, empty by default in the user interface
+    ipaddressrange?: string; // (Addr not Net because Borsh does not have a matching trait) IP Adress range, suggested random in the user interface
+    listenport?: string; // Port number, suggested random in the user interface
+    dns?: string; // DNS IP Adress, empty by default in the user interface
 //    saveconfig: Option<Bool>, // This is not an applicable feature for Non fungible token based VPN Services
-    postup:  string;  // Post Up command for the server, with a default in the user interface
+    postup?:  string;  // Post Up command for the server, with a default in the user interface
 //    predown:  string; // Pre Down ip command, future feature not for the POC
-    postdown:  string; // Post Down command for the server, with a default in the user interface
+    postdown?:  string; // Post Down command for the server, with a default in the user interface
     // Following parameters belong to the wireguard config file section [Peer]
 //    publickey:  string; // This is sourced from the wallet
-    allowedips: string; // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
-    endpoint: string; // IPAddress and port where the clients connect
+    allowedips?: string; // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
+    endpoint?: string; // IPAddress and port where the clients connect
     // Following parameters are part of the cableguard spec specific section [Signature] The enable the author of a CBG bbadge verify authorship
-    authornftcontractid:  string; // Non fungible token ID of the "author" of the set of Non fungible tokens created
-    authorsignature:  string;  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
-    kbpersecond: string; // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
+    authornftcontractid?:  string; // Non fungible token ID of the "author" of the set of Non fungible tokens created
+    authorsignature?:  string;  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
+    kbpersecond?: string; // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
 //    requestspersecond: Option<u64>, // Requests per second of the subscription, future feature not for the POC
 //    authorizedlocation:  string; // From what region the subscription is valid, future feature not for the POC
 //    authorizednetwork: Option<Ipv4Addr>, // From what network range the subscription is valid, future feature not for the POC
 
-    constructor({
-            title,
-            description,
-            expiresat,
-            startsat,
-            ipaddressrange,
-            listenport,
-            dns,
-            postup,
-            postdown,
-            allowedips,
-            endpoint,
-            kbpersecond
-        }) {
-        this.title = title,
-        this.description = description,
+    constructor(
+            ititle?:string,
+            idescription?:string,
+            iexpiresat?:string,
+            istartsat?:string,
+            iipaddressrange?:string,
+            ilistenport?:string,
+            idns?:string,
+            ipostup?:string,
+            ipostdown?:string,
+            iallowedips?:string,
+            iendpoint?:string,
+            ikbpersecond?:string
+        ) {
+        this.title = ititle,
+        this.description = idescription,
 //            media, 
 //            mediaHash, 
 //            copies, 
 //            issuedAt, 
-        this.expiresat = expiresat, 
-        this.startsat = startsat, 
+        this.expiresat = iexpiresat, 
+        this.startsat = istartsat, 
 //            updatedAt, 
 //            extra, 
 //            reference, 
 //            referenceHash,
-        this.ipaddressrange = ipaddressrange, // (Addr not Net because Borsh does not have a matching trait) IP Adress range, suggested random in the user interface
-        this.listenport = listenport, // Port number, suggested random in the user interface
-        this.dns = dns, // DNS IP Adress, empty by default in the user interface
-        this.postup = postup,  // Post Up command for the server, with a default in the user interface
-        this.postdown = postdown, // Post Down command for the server, with a default in the user interface
-        this.allowedips = allowedips, // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
-        this.endpoint = endpoint, // IPAddress and port where the clients connect
+        this.ipaddressrange = iipaddressrange, // (Addr not Net because Borsh does not have a matching trait) IP Adress range, suggested random in the user interface
+        this.listenport = ilistenport, // Port number, suggested random in the user interface
+        this.dns = idns, // DNS IP Adress, empty by default in the user interface
+        this.postup = ipostup,  // Post Up command for the server, with a default in the user interface
+        this.postdown = ipostdown, // Post Down command for the server, with a default in the user interface
+        this.allowedips = iallowedips, // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
+        this.endpoint = iendpoint, // IPAddress and port where the clients connect
         this.authornftcontractid, // Non fungible token ID of the "author" of the set of Non fungible tokens created
         this.authorsignature,  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
-        this.kbpersecond = kbpersecond // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
+        this.kbpersecond = ikbpersecond // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
     }
 }
 

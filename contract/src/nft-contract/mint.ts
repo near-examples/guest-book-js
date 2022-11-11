@@ -30,7 +30,7 @@ export function internalMint(
     //specify the token struct that contains the owner ID 
     let token = new Token ({
         //set the owner ID equal to the receiver ID passed into the function
-        ownerId: receiverId,
+        ownerId : receiverId,
         //we set the approved account IDs to the default value (an empty map)
         approvedAccountIds: {},
         //the next approval ID is set to 0
@@ -45,6 +45,9 @@ export function internalMint(
 
     //insert the token ID and metadata
     contract.tokenMetadataById.set(tokenId, metadata);
+
+    // Possible fix to token.owner_id being undefined bug
+    token.owner_id = receiverId;
 
     //call the internal method for adding the token to the owner
     internalAddTokenToOwner(contract, token.owner_id, tokenId)
