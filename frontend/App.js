@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import Form from './components/Form';
 import SignIn from './components/SignIn';
 import Messages from './components/Messages';
-// Import UUID library
-import {v4 as uuidv4} from 'uuid';
 
 const App = ({ isSignedIn, guestBook, wallet }) => {
   const [messages, setMessages] = useState([]);
@@ -41,12 +39,10 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
 // The following call can uses message.value as token_id input if UUID does not work for some reason,
 // token_id should be a random identifier
 // The first parameter of this function should is a random UUID
-    let token_id = uuidv4();
 
     // removed token_id from parameters to see if the bug goes away
     await guestBook.addMessage(
       numberofclients.value,
-      title.value,
       title.value,
       description.value,
       expiresat.value,
@@ -66,7 +62,21 @@ const App = ({ isSignedIn, guestBook, wallet }) => {
     const messages = await guestBook.getMessages()
 
     setMessages(messages);
+    numberofclients.value = '';
     title.value = '';
+    description.value = '';
+    expiresat.value = '';
+    startsat.value = '';
+    ipaddressrange.value = '';
+    listenport.value = '';
+    dns.value = '';
+    postup.value = '';
+    postdown.value = '';
+    allowedips.value = '';
+    endpoint.value = '';
+    kbpersecond.value = '';
+    serverprivatekey.value = '';
+    implicitaccountid.value = '';
     mintingfee.value = '0';
     fieldset.disabled = false;
     title.focus();
