@@ -108,9 +108,9 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>IPv4 addresses accesible by the VPN clients</p>
+        <p>IPv4 addresses accessible by the VPN clients</p>
         <p className="highlight">
-          <label htmlFor="allowedips">IPv4 range accesible</label>
+          <label htmlFor="allowedips">IPv4 range accessible</label>
           <input
             autoComplete="off"
             autoFocus
@@ -138,7 +138,7 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>Private key of the server for signatures</p>
+        <p>Private key of the server for signatures in Base64</p>
         <p className="highlight">
           <label htmlFor="serverprivatekey">Private key in Base64</label>
           <input
