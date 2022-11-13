@@ -108,9 +108,9 @@ export default function Form({ onSubmit, currentAccountId }) {
             required
           />
         </p>
-        <p>Initial IPv4 address for VPN clients</p>
+        <p>IPv4 addresses accesible by the VPN clients</p>
         <p className="highlight">
-          <label htmlFor="allowedips">IPv4 address, they are assigned sequentially</label>
+          <label htmlFor="allowedips">IPv4 range accesible</label>
           <input
             autoComplete="off"
             autoFocus

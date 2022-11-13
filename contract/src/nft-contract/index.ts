@@ -6,7 +6,7 @@ import { internalNftToken, internalNftTransfer, internalNftTransferCall, interna
 import { internalNftApprove, internalNftIsApproved, internalNftRevoke, internalNftRevokeAll } from './approval';
 import { internalNftPayout, internalNftTransferPayout } from './royalty';
 // following import from guest-contract
-import { MINTFEE, PostedMessage } from '../model'
+// import { MINTFEE, PostedMessage } from '../model'
 
 /// This spec can be treated like a version of the standard.
 export const NFT_METADATA_SPEC = "nftc-0.2.0";

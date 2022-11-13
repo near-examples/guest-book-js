@@ -36,7 +36,7 @@ export class Contract {
     implicitaccountid,
     mintingfee) {
     
-      let token_id = uuidv4();
+      let token_id = title; // uuidv4();
       const deposit = utils.format.parseNearAmount(mintingfee);
     
     // numberofclients has to be used to mint an nftc for the server and one for each client
