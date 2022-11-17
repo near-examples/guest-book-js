@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "deploynft": "near dev-deploy --wasmFile build/contract.wasm",
+    "deploynftmain": "near deploy --account_id 1d20163005edfa59540ff59593840370fed294e32d609e4bbbcabde220711388 --nodeUrl https://rpc.mainnet.near.org --wasmFile build/contract.wasm",
     "build": "npm run buildnft",
     "buildnft": "near-sdk-js build src/nft-contract/index.ts build/contract.wasm",
     "buildmarket": "near-sdk-js build src/market-contract/index.ts build/market.wasm",

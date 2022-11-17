@@ -4,6 +4,7 @@
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
     "start": "./start.sh",
+    "startmain": "./startmain.sh",
     "build": "parcel build index.html --public-url ./"
   },
   "devDependencies": {

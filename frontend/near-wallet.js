@@ -24,13 +24,13 @@ export class Wallet {
   network;
   createAccessKeyFor;
 
-  constructor({ createAccessKeyFor = undefined, network = 'testnet' }) {
+  constructor({ createAccessKeyFor = undefined, network = 'mainnet' }) {
     // Login to a wallet passing a contractId will create a local
     // key, so the user skips signing non-payable transactions.
     // Omitting the accountId will result in the user being
     // asked to sign all transactions.
     this.createAccessKeyFor = createAccessKeyFor
-    this.network = 'testnet'
+    this.network = 'mainnet'
   }
 
   // To be called when the website loads
