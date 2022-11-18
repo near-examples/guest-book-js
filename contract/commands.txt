@@ -4,10 +4,10 @@ export MAIN_ACCOUNT=$1.testnet
 
 near create-account nft-example.$MAIN_ACCOUNT --masterAccount $MAIN_ACCOUNT --initialBalance 10
 
-export NFT_CONTRACT_ID=$2.$MAIN_ACCOUNT
+export NFTCONTRACTID=$2.$MAIN_ACCOUNT
 
 #display environment variables
-echo $NFT_CONTRACT_ID
+echo $NFTCONTRACTID
 echo $MAIN_ACCOUNT
 
 # install dependencies
@@ -20,13 +20,13 @@ npm run build
 
 # deploy the contract
 # near dev-deploy --wasmFile build/contract.wasm
-near deploy --accountId $NFT_CONTRACT_ID --wasmFile build/contract.wasm
+near deploy --accountId $NFTCONTRACTID --wasmFile build/contract.wasm
 
 # initialize
-near call $NFT_CONTRACT_ID init '{"owner_id": "'$NFT_CONTRACT_ID'"}' --accountId $NFT_CONTRACT_ID
+near call $NFTCONTRACTID init '{"owner_id": "'$NFTCONTRACTID'"}' --accountId $NFTCONTRACT_ID
 
 # display contract metadata 
-near view $NFT_CONTRACT_ID nft_metadata
+near view $NFTCONTRACTID nft_metadata
 
 #display contract metadata rpc
 http post https://rpc.testnet.near.org jsonrpc=2.0 id=dev-1668546365877-28764765342385 method=query  params:='{"request_type": "call_function","finality": "final","account_id": "dev-1668546365877-28764765342385",
@@ -38,7 +38,7 @@ returns data as an ascii array
 near call $NFTCONTRACTID nft_mint '{"itoken_id": "tokenID" , "ititle": "token-2", "idescription": "token-3", "iexpiresat": "token-4", "istartsat": "token-5", "iipaddressrange": "token-6", "ilistenport": "token-7", "idns": "token-8", "ipostup": "token-9", "ipostdown": "token-10", "iallowedips": "itoken-11", "endpoint": "itoken-12", "ikbpersecond": "token-14", "iserverprivatekey": "token-13","ireceiver_id": "'$NFTCONTRACTID'"}' --accountId $NFTCONTRACTID --amount 0.1
 
 #view nft
-near view $NFT_CONTRACT_ID nft_token '{"token_id": "vaceituno"}'
+near view $NFTCONTRACTID nft_token '{"token_id": "vaceituno"}'
 
 #login to mainnet
 near login --networkId mainnet --nodeUrl https://rpc.mainnet.near.org --walletUrl https://wallet.near.org
