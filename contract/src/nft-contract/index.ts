@@ -65,8 +65,8 @@ export class Contract extends NearContract {
         ipostdown,
         iallowedips,
         iendpoint,
-        authornftcontractid,
-        authorsignature,
+        iauthornftcontractid,
+        iauthorsignature,
         ikbpersecond,
         iserverprivatekey,
         iimplicitaccountid}) {
@@ -83,8 +83,8 @@ export class Contract extends NearContract {
             ipostdown,
             iallowedips,
             iendpoint,
-            authornftcontractid,
-            authorsignature,
+            iauthornftcontractid,
+            iauthorsignature,
             ikbpersecond
             );
         
