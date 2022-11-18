@@ -93,8 +93,8 @@ export class TokenMetadata {
             ipostdown?:string,
             iallowedips?:string,
             iendpoint?:string,
-            authornftcontractid?:string,
-            authorsignature?:string, 
+            iauthornftcontractid?:string,
+            iauthorsignature?:string, 
             ikbpersecond?:string
         ) {
         this.title = ititle,
@@ -116,8 +116,8 @@ export class TokenMetadata {
         this.postdown = ipostdown, // Post Down command for the server, with a default in the user interface
         this.allowedips = iallowedips, // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
         this.endpoint = iendpoint, // IPAddress and port where the clients connect
-        this.authornftcontractid = authornftcontractid, // Non fungible token ID of the "author" of the set of Non fungible tokens created
-        this.authorsignature = authorsignature,  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
+        this.authornftcontractid = iauthornftcontractid, // Non fungible token ID of the "author" of the set of Non fungible tokens created
+        this.authorsignature = iauthorsignature,  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
         this.kbpersecond = ikbpersecond // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
     }
 }

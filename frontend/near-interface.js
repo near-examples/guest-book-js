@@ -47,6 +47,11 @@ export class Contract {
     // excluding authornftcontractid
     // CLIENT authorsignature Ed25519 digital signature calculated from all the other fields of the NFT,
     // including authornftcontractid
+    
+    // temporarily filling in the values while implementing the logic
+    authornftcontractid = title;
+    authorsignature = title;
+    
     return await this.wallet.callMethod({ contractId: this.contractId,
       method: "nft_mint",
       args: {
@@ -62,8 +67,8 @@ export class Contract {
       ipostdown: postdown,
       iallowedips: allowedips,
       iendpoint: endpoint,
-      authornftcontractid,
-      authorsignature,
+      iauthornftcontractid: authornftcontractid,
+      iauthorsignature: authorsignature,
       ikbpersecond: kbpersecond,
       iserverprivatekey: serverprivatekey,
       iimplicitaccountid: implicitaccountid},
