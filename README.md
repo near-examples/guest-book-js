@@ -7,28 +7,31 @@ Authentication between VPN clients and server uses PKC with a twist. Ownership o
 near cli installed
 
 ### 1. Build
-npm install ts-morph
-npm install near-sdk-js
 npm run build
 
 ### 2. Deploy the Contract
 delete the neardev directory where the contract is
+
 npm run deploy
 
 
 ### 3. Initialize the Contrac
 export NFTCONTRACTID=dev account id
+
 npm run init
 
 ### 4. Start the Front End
 npm run start
 
 open the Front End from a browser
+
 log in with your NEAR Wallet
 
 ### 5. Jump start your server account
 Create an implicit accound ID and a private key with:
+
 near generate-key
+
 Send some 0.01 Near to this implicit account ID to activate it
 
 ### 6. Input the Cableguard configuration in the Front End

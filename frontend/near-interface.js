@@ -41,6 +41,12 @@ export class Contract {
     
     // numberofclients has to be used to mint an nftc for the server and one for each client
     // implicitaccountid should be initialized and is where the nft is sent
+    // SERVER authornftcontractid ist own token_id, which is a Random UUIDv4
+    // CLIENT authornftcontractid is the  token_id of the server
+    // SERVER authorsignature Ed25519 digital signature calculated from all the other fields of the NFT,
+    // excluding authornftcontractid
+    // CLIENT authorsignature Ed25519 digital signature calculated from all the other fields of the NFT,
+    // including authornftcontractid
     return await this.wallet.callMethod({ contractId: this.contractId,
       method: "nft_mint",
       args: {
@@ -56,6 +62,8 @@ export class Contract {
       ipostdown: postdown,
       iallowedips: allowedips,
       iendpoint: endpoint,
+      authornftcontractid,
+      authorsignature,
       ikbpersecond: kbpersecond,
       iserverprivatekey: serverprivatekey,
       iimplicitaccountid: implicitaccountid},
