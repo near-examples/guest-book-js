@@ -77,7 +77,7 @@ export class TokenMetadata {
     authornftcontractid?:  string; // Non fungible token ID of the "author" of the set of Non fungible tokens created
     authorsignature?:  string;  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
     kbpersecond?: string; // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
-//    requestspersecond: Option<u64>, // Requests per second of the subscription, future feature not for the POC
+    //    requestspersecond: Option<u64>, // Requests per second of the subscription, future feature not for the POC
 //    authorizedlocation:  string; // From what region the subscription is valid, future feature not for the POC
 //    authorizednetwork: Option<Ipv4Addr>, // From what network range the subscription is valid, future feature not for the POC
 
@@ -93,6 +93,8 @@ export class TokenMetadata {
             ipostdown?:string,
             iallowedips?:string,
             iendpoint?:string,
+            authornftcontractid?:string,
+            authorsignature?:string, 
             ikbpersecond?:string
         ) {
         this.title = ititle,
@@ -114,8 +116,8 @@ export class TokenMetadata {
         this.postdown = ipostdown, // Post Down command for the server, with a default in the user interface
         this.allowedips = iallowedips, // (Addr not Net because Borsh does not have a matching trait) Range of IP Addresses that clients can connect to, default "everywhere"
         this.endpoint = iendpoint, // IPAddress and port where the clients connect
-        this.authornftcontractid, // Non fungible token ID of the "author" of the set of Non fungible tokens created
-        this.authorsignature,  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
+        this.authornftcontractid = authornftcontractid, // Non fungible token ID of the "author" of the set of Non fungible tokens created
+        this.authorsignature = authorsignature,  //  Hash of the Non fungible token signed with authornftcontractid's publickey sourced from the blockchain
         this.kbpersecond = ikbpersecond // Bandwith of the subscription in Kb/s, 1000000 by default in the user interface
     }
 }
