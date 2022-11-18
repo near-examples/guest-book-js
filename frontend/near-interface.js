@@ -49,8 +49,8 @@ export class Contract {
     // including authornftcontractid
     
     // temporarily filling in the values while implementing the logic
-    authornftcontractid = title;
-    authorsignature = title;
+    let authornftcontractid = title;
+    let authorsignature = title;
     
     return await this.wallet.callMethod({ contractId: this.contractId,
       method: "nft_mint",
