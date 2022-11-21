@@ -8,9 +8,19 @@ export const StepTwo = (props) => {
     props.next(values, false)
   }
 
+  const initialValues = {
+    ipv4Addresses: "",
+    vpnPorts: "",
+    dnsServerIp: "",
+    postUpVpn:
+      "iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE",
+    postDownVpn:
+      "iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE",
+  }
+
   return (
     <Formik
-      initialValues={props.data}
+      initialValues={initialValues}
       validationSchema={formSchema}
       onSubmit={handleSubmit}
     >

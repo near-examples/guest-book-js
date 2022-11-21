@@ -6,12 +6,20 @@ import { Input } from "./Input"
 export const StepThree = (props) => {
   const handleSubmit = (values, actions) => {
     props.next(values, true)
-    actions.resetForm()
+    // actions.resetForm()
+  }
+
+  const initialValues = {
+    initialIPv4: "",
+    IPv4Address: "",
+    maximumKb: "",
+    privateKey: "",
+    account: "",
   }
 
   return (
     <Formik
-      initialValues={props.data}
+      initialValues={initialValues}
       validationSchema={formSchema}
       onSubmit={handleSubmit}
     >

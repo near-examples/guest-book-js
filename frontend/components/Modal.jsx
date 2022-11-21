@@ -1,13 +1,13 @@
 import React from "react"
 
-export const Modal = ({ isModalOpen, setIsModalOpen }) => {
+export const Modal = ({ isModal, setIsModalOpen, mint }) => {
   const handleClick = (event) => {
     if (event.target.id === "background") {
       setIsModalOpen(false)
     }
   }
 
-  if (!isModalOpen) {
+  if (!isModal) {
     return null
   } else {
     return (
@@ -23,7 +23,7 @@ export const Modal = ({ isModalOpen, setIsModalOpen }) => {
                 <button
                   onClick={() => setIsModalOpen(false)}
                   type="button"
-                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 "
                   data-modal-toggle="small-modal"
                 >
                   <svg
@@ -42,15 +42,18 @@ export const Modal = ({ isModalOpen, setIsModalOpen }) => {
                   <span className="sr-only">Close modal</span>
                 </button>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="flex flex-col items-center px-4 pb-2 gap-2 justify-center">
                 <div>
-                  <h1 className="text-white w-12">
+                  <h1 className=" text-center mb-2 w-48">
                     Please check the parameters for typos, errors before
                     proceeding.
                   </h1>
                 </div>
                 <div>
-                  <button className="inline-flex items-center rounded-xl duration-300 ease-in-out my-2.5 bg-indigo-700 px-4 py-3 text-white shadow-lg transition hover:bg-indigo-600 focus:outline-none">
+                  <button
+                    onClick={mint}
+                    className="inline-flex items-center  rounded-xl duration-300 ease-in-out my-2.5 bg-indigo-700 px-4 py-3 text-white shadow-lg transition hover:bg-indigo-600 focus:outline-none"
+                  >
                     Mint NFT
                   </button>
                 </div>

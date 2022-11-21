@@ -11,77 +11,85 @@ import { Modal } from "./Modal"
 // nft_mint field token_id is a generated UUID
 // nft_mint field title is entered as the parameter message for the time being
 
-const todayDate = () => {
-  let date = new Date()
-  let currentDate = date.getDate()
-  let currentMonth = date.getMonth() + 1
-  let currentYear = date.getFullYear()
-  return (
-    currentYear +
-    "-" +
-    (currentMonth < 10 ? "0" + currentMonth : currentMonth) +
-    "-" +
-    (currentDate < 10 ? "0" + currentDate : currentDate)
-  )
-}
-const nextYearDate = () => {
-  let date = new Date()
-  let currentDate = date.getDate()
-  let currentMonth = date.getMonth() + 1
-  let currentYear = date.getFullYear() + 1
-  return (
-    currentYear +
-    "-" +
-    (currentMonth < 10 ? "0" + currentMonth : currentMonth) +
-    "-" +
-    (currentDate < 10 ? "0" + currentDate : currentDate)
-  )
-}
+// const todayDate = () => {
+//   let date = new Date()
+//   let currentDate = date.getDate()
+//   let currentMonth = date.getMonth() + 1
+//   let currentYear = date.getFullYear()
+//   return (
+//     currentYear +
+//     "-" +
+//     (currentMonth < 10 ? "0" + currentMonth : currentMonth) +
+//     "-" +
+//     (currentDate < 10 ? "0" + currentDate : currentDate)
+//   )
+// }
+// const nextYearDate = () => {
+//   let date = new Date()
+//   let currentDate = date.getDate()
+//   let currentMonth = date.getMonth() + 1
+//   let currentYear = date.getFullYear() + 1
+//   return (
+//     currentYear +
+//     "-" +
+//     (currentMonth < 10 ? "0" + currentMonth : currentMonth) +
+//     "-" +
+//     (currentDate < 10 ? "0" + currentDate : currentDate)
+//   )
+// }
 
-export default function NFTForm({ currentAccountId }) {
-  const [currentStep, setCurrentStep] = useState(0)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [data, setData] = useState({
-    clientNumber: "",
-    vpnProvider: "",
-    vpnDescription: "",
-    expirationDate: nextYearDate(),
-    startingDate: todayDate(),
-    ipv4Addresses: "",
-    vpnPorts: "",
-    dnsServerIp: "",
-    postUpVpn:
-      "iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE",
-    postDownVpn:
-      "iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE",
-    initialIPv4: "",
-    maximumKb: "",
-    privateKey: "",
-    account: "",
-  })
+export default function NFTForm({
+  data,
+  step,
+  prev,
+  next,
+  setIsModalOpen,
+  isModal,
+  mint,
+}) {
+  // const [currentStep, setCurrentStep] = useState(0)
+  // const [isModalOpen, setIsModalOpen] = useState(false)
+  // const [data, setData] = useState({
+  //   clientNumber: "",
+  //   vpnProvider: "",
+  //   vpnDescription: "",
+  //   expirationDate: nextYearDate(),
+  //   startingDate: todayDate(),
+  //   ipv4Addresses: "",
+  //   vpnPorts: "",
+  //   dnsServerIp: "",
+  //   postUpVpn:
+  //     "iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE",
+  //   postDownVpn:
+  //     "iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE",
+  //   initialIPv4: "",
+  //   maximumKb: "",
+  //   privateKey: "",
+  //   account: "",
+  // })
 
-  const handleNextStep = (enteredData, final = false) => {
-    setData((prevState) => ({ ...prevState, ...enteredData }))
+  // const handleNextStep = (enteredData, final = false) => {
+  //   setData((prevState) => ({ ...prevState, ...enteredData }))
 
-    if (final) {
-      console.log("form submitted")
-      console.log("data", enteredData)
-      setIsModalOpen(true)
-      return
-    }
+  //   if (final) {
+  //     console.log("form submitted")
+  //     console.log("data", enteredData)
+  //     setIsModalOpen(true)
+  //     return
+  //   }
 
-    setCurrentStep((prevState) => prevState + 1)
-  }
-  const handlePrevStep = (enteredData) => {
-    setData((prevState) => ({ ...prevState, ...enteredData }))
+  //   setCurrentStep((prevState) => prevState + 1)
+  // }
+  // const handlePrevStep = (enteredData) => {
+  //   setData((prevState) => ({ ...prevState, ...enteredData }))
 
-    setCurrentStep((prevState) => prevState - 1)
-  }
+  //   setCurrentStep((prevState) => prevState - 1)
+  // }
 
   const steps = [
-    <StepOne next={handleNextStep} data={data} />,
-    <StepTwo next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <StepThree next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <StepOne next={next} data={data} />,
+    <StepTwo next={next} prev={prev} data={data} />,
+    <StepThree next={next} prev={prev} data={data} />,
   ]
 
   return (
@@ -93,11 +101,13 @@ export default function NFTForm({ currentAccountId }) {
         </h1>
       </div>
       <div className="flex flex-col items-center  justify-center">
-        <Step current={currentStep} />
+        <Step current={step} />
         <div className="flex items-center mt-4 justify-center ">
-          {steps[currentStep]}
+          {steps[step]}
         </div>
       </div>
+
+      <Modal setIsModalOpen={setIsModalOpen} isModal={isModal} mint={mint} />
     </div>
     // <form className="flex flex-col">
     //   <div id="fieldset">
