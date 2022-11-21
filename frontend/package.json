@@ -13,12 +13,15 @@
     "@babel/preset-react": "^7.17.12",
     "@parcel/transformer-sass": "^2.7.0",
     "@types/node": "^18.6.2",
+    "autoprefixer": "^10.4.13",
     "buffer": "^6.0.3",
     "env-cmd": "^10.1.0",
     "nodemon": "^2.0.16",
     "parcel": "^2.6.0",
+    "postcss": "^8.4.19",
     "process": "^0.11.10",
     "react-test-renderer": "^18.1.0",
+    "tailwindcss": "^3.2.4",
     "ts-node": "^10.8.0",
     "typescript": "^4.7.2"
   },
@@ -34,11 +37,15 @@
     "@near-wallet-selector/nightly-connect": "^7.0.0",
     "@near-wallet-selector/sender": "^7.0.0",
     "@near-wallet-selector/wallet-connect": "^7.0.0",
+    "@noble/ed25519": "^1.7.1",
+    "formik": "^2.2.9",
     "near-api-js": "^0.44.2",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "regenerator-runtime": "^0.13.9"
+    "react-icons": "^4.6.0",
+    "regenerator-runtime": "^0.13.9",
+    "yup": "^0.32.11"
   },
   "resolutions": {
     "@babel/preset-env": "7.13.8"

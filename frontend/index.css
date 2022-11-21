@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background: #3f51b5;
+  color: white;
+}
+
+.step-item {
+  @apply relative flex flex-col justify-center items-center w-36;
+}
+.step-item:not(:first-child):before {
+  @apply content-[''] bg-slate-700 absolute w-full h-[3px] right-2/4 top-1/3 -translate-y-2/4;
+}
+.step {
+  @apply w-10 h-10 flex items-center justify-center z-10 relative bg-slate-700 rounded-full font-semibold text-white;
+}
+.active .step {
+  @apply bg-indigo-700;
+}
+.complete .step {
+  @apply bg-green-600;
+}
+.complete p {
+  @apply text-slate-700;
+}
+.complete:not(:first-child):before,
+.active:not(:first-child):before {
+  @apply bg-green-600;
+}

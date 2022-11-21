@@ -21,5 +21,16 @@
   "dependencies": {
     "firebase": "^9.13.0",
     "uuid": "^9.0.0"
-  }
+  },
+  "description": "Create Wireguard compatible sets of NFTs with all the configuration and subscription information necessary to set up VPN connections.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanesmizi/cableguard-nftcminter.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/alanesmizi/cableguard-nftcminter/issues"
+  },
+  "homepage": "https://github.com/alanesmizi/cableguard-nftcminter#readme"
 }
