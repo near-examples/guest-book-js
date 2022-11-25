@@ -13,5 +13,7 @@ jobs:
           node-version: "16"
       - name: Install modules
         run: yarn
+      - name: Deploy Contract
+        run: printf 'y\n' | yarn deploy
       - name: Run tests
         run: yarn test

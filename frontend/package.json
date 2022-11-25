@@ -4,11 +4,11 @@
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
     "start": "./start.sh",
-    "pstart": "env-cmd -f '../contract/neardev/dev-account.env' parcel index.html",
+       "start:headless": "env-cmd -f '../contract/neardev/dev-account.env' parcel index.html",
     "build": "parcel build index.html --public-url ./",
-    "test:e2e": "npm run pstart & npm run cypress:run",
-    "cypress:run": "cypress run",
-    "cypress:open": "cypress open --browser chromium"
+    "test:e2e": "npm run start:headless & npm run cypress:run",
+      "cypress:run": "cypress run",
+      "cypress:open": "cypress open --browser chromium"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
