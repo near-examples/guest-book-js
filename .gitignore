@@ -17,6 +17,7 @@ node_modules
 # testing
 /coverage
 **/videos
+**/screenshots
 
 # production
 **/build
