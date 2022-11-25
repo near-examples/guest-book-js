@@ -4,7 +4,11 @@
   "license": "(MIT AND Apache-2.0)",
   "scripts": {
     "start": "./start.sh",
-    "build": "parcel build index.html --public-url ./"
+    "pstart": "env-cmd -f '../contract/neardev/dev-account.env' parcel index.html",
+    "build": "parcel build index.html --public-url ./",
+    "test:e2e": "npm start & npm run cypress:run",
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open --browser chromium"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
@@ -12,6 +16,7 @@
     "@babel/preset-react": "^7.17.12",
     "@parcel/transformer-sass": "^2.8.0",
     "@types/node": "^18.6.2",
+    "cypress": "^11.2.0",
     "env-cmd": "^10.1.0",
     "nodemon": "^2.0.16",
     "parcel": "^2.6.0",
