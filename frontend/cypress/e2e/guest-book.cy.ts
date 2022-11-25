@@ -4,6 +4,6 @@ context("Main Page", () => {
     });
 
     it("should display the guest book", () => {
-        cy.get("h1").should("have.text", "Guest Book");
+        cy.get("h1").contains("NEAR Guest Book");
     });
 });
