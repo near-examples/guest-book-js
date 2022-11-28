@@ -7,7 +7,7 @@
        "start:headless": "env-cmd -f '../contract/neardev/dev-account.env' parcel index.html",
     "build": "parcel build index.html --public-url ./",
     "test:e2e": "npm run start:headless & npm run cypress:run",
-      "cypress:run": "cypress run",
+      "cypress:run": "cd cypress && cypress run",
       "cypress:open": "cypress open --browser chromium"
   },
   "devDependencies": {
